@@ -89,7 +89,35 @@
         .editable {
             background-color: #ffffff;
         }
+/* Ocultar el borde de los select */
+    select {
+        -webkit-appearance: none; /* Para navegadores WebKit (Chrome, Safari) */
+        -moz-appearance: none;    /* Para Firefox */
+        appearance: none;
+        border: none;
+        background: none;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+        width: 100%; /* Asegura que el select ocupe el ancho completo de la celda */
+        cursor: pointer;
+    }
 
+    /* Centrar el select dentro de la celda */
+    td {
+        text-align: center;
+        vertical-align: middle;
+        padding: 8px;
+    }
+
+    /* Ajustar el tamaño de las opciones del select */
+    option {
+        text-align: center;
+    }
+
+    
+    
+   
     </style>
 </head>
 <body>
@@ -138,39 +166,55 @@
 
 <div class="section-container">
     <h2>1. Dirección de Asignaturas</h2>
-    <table id="asignaturas">
-        <thead>
-            <tr>
-                <th>Año</th>
-                <th>Periodo</th>
-                <th>Código</th>
-                <th>Grupo</th>
-                <th>Asignatura</th>
-                <th>Horas clase semanal</th>
-                <th>Horas asesoría</th>
-                <th>Horas semestrales</th>
-                <th>Horario</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr contenteditable="true" class="editable">
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </tbody>
-    </table>
+   <table id="asignaturas">
+    <thead>
+        <tr>
+            <th>Año</th>
+            <th>Periodo</th>
+            <th>Código</th>
+            <th>Grupo</th>
+            <th>Asignatura</th>
+            <th>Horas clase semanal</th>
+            <th>Horas asesoría</th>
+            <th>Horas semestrales</th>
+            <th>Horario</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="editable">
+            <!-- Lista desplegable para seleccionar el año -->
+            <td>
+                <select class="year">
+				<option value=" "> </option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                </select>
+            </td>
+            <!-- Lista desplegable para seleccionar el periodo -->
+            <td>
+                <select class="period">
+				<option value=" "> </option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                </select>
+            </td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true" class="hours-weekly-class" oninput="calculateSemesterHours(this)"></td>
+            <td contenteditable="true" class="hours-advisory" oninput="calculateSemesterHours(this)"></td>
+            <td class="hours-semester"></td>
+            <td contenteditable="true"></td>
+        </tr>
+    </tbody>
+</table>
     <button class="align-right" onclick="addRow('asignaturas')">Añadir fila</button>
 </div>
 
 <div class="section-container">
     <h2>2. Dirección de Trabajos de Grado</h2>
+    
     <table id="trabajosGrado">
         <thead>
             <tr>
@@ -184,14 +228,23 @@
             </tr>
         </thead>
         <tbody>
-            <tr contenteditable="true" class="editable">
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+            <tr class="editable">
+                <td contenteditable="true"></td>
+				<td contenteditable="true"></td>
+				<td contenteditable="true"></td>
+                <td>
+                    <select>
+					<option value=" "> </option>
+					    <option value="Pregrado">Pregrado</option>
+                        <option value="Posgrado">Posgrado</option>
+                    </select>
+                </td>
+				
+                <td contenteditable="true" class="hours-weekly-class" oninput="calculateSemesterHours(this)"></td>
+                <td>
+                    <span class="hours-semester">0</span>
+                </td>
+                <td contenteditable="true"></td>
             </tr>
         </tbody>
     </table>
@@ -222,7 +275,13 @@
                 <td></td>
                 <td></td>
                 <td></td>
-                <td></td>
+                <td>
+                    <select>
+					<option value=" "> </option>
+                        <option value="Pregrado">Pregrado</option>
+                        <option value="Posgrado">Posgrado</option>
+                    </select>
+                </td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -251,8 +310,20 @@
             <tr contenteditable="true" class="editable">
                 <td></td>
                 <td></td>
-                <td></td>
-                <td></td>
+                <td>
+                    <select>
+					<option value=" "> </option>
+                        <option value="Director">Director</option>
+                        <option value="Participante">Participante</option>
+                    </select>
+                </td>
+                <td>
+                    <select>
+					<option value=" "> </option>
+                        <option value="Formulación">Formulación</option>
+                        <option value="Ejecución">Ejecución</option>
+                    </select>
+                </td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -306,7 +377,16 @@
         <tbody>
             <tr contenteditable="true" class="editable">
                 <td></td>
-                <td></td>
+                <td>
+                    <select>
+						<option value=" "> </option>
+                        <option value="Comité organizador">Comité organizador</option>
+                        <option value="Comité científico">Comité científico</option>
+						<option value="Conferencista">Conferencista</option>
+						<option value="Tallerista">Tallerista</option>
+						<option value="Ponente">Ponente</option>
+                    </select>
+                </td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -333,7 +413,17 @@
         <tbody>
             <tr contenteditable="true" class="editable">
                 <td></td>
-                <td></td>
+                <td>
+                    <select>
+					<option value=" "> </option>
+                        <option value="Comité editorial">Comité editorial</option>
+                        <!--<option value="Comité científico">Comité científico</option>-->
+						<!--<option value="Conferencista">Conferencista</option>-->
+						<!--<option value="Tallerista">Tallerista</option>-->
+						<!--<option value="Ponente">Ponente</option>-->
+						<option value="Otro">Otro</option>
+                    </select>
+                </td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -629,6 +719,25 @@
 
                     <button type="button" onclick="goBack()">Volver a Instrucciones</button>
                 </div>
+<script>
+    function calculateSemesterHours(element) {
+        var row = element.parentElement;
+        var classHours = parseFloat(row.querySelector('.hours-weekly-class').innerText) || 0;
+        var advisoryHours = parseFloat(row.querySelector('.hours-advisory').innerText) || 0;
+        var semesterHours = (classHours + advisoryHours) * 22;
+        row.querySelector('.hours-semester').innerText = semesterHours.toFixed(0);
+    }
+
+</script>
+   <script>
+        function calculateSemesterHours(element) {
+            var row = element.parentElement; // Get the row
+            var classHours = parseFloat(element.innerText) || 0;
+            var semesterHours = classHours * 22;
+            row.querySelector('.hours-semester').innerText = semesterHours.toFixed(0);
+        }
+    </script>
+
 
     <script>
         function showForm() {
@@ -761,3 +870,6 @@
 
 </body>
 </html>
+
+
+
