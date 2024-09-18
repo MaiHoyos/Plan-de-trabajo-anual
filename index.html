@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller Plan de Trabajo Anual</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        p {
+            margin: 10px 0;
+            color: #555;
+        }
+        ul {
+            margin: 10px 0;
+        }
+        ul li {
+            margin-bottom: 10px;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        button {
+            background-color: #d1d1d1;
+            color: black;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+		button {
+            margin-top: 10px;
+        }
+        .align-right {
+            display: block;
+            margin-left: auto;
+            margin-right: 0;
+        }
+
+		
+        .hidden {
+            display: none;
+        }
+        .form-section {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+        .form-container {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+		table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+            background-color: #ffffff;
+        }
+        th {
+            background-color: #DCF3FC;
+        }
+        .editable {
+            background-color: #ffffff;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container" id="instructions">
+        <h1>Taller Plan de Trabajo Anual</h1>
+
+        <h3>Objetivo del Taller:</h3>
+        <p>El objetivo de este taller es presentar un modelo del Plan de Trabajo Anual. Durante el taller, los participantes llenarán un formato de manera práctica, para luego discutir sus observaciones y sugerencias en grupo.</p>
+
+        <h3>Instrucciones:</h3>
+        <ol>
+            <li><strong>Inicio del Ejercicio:</strong> Haga clic en el botón "Llenar Formato". Esto abrirá el formato del Plan de Trabajo Anual que debe completar.</li>
+            <li><strong>Llenado de Campos:</strong> El formato está dividido en cuatro secciones principales: Dirección de Asignaturas, Dirección de Trabajos de Grado, Investigación y Extensión, y Funciones académico administrativas. Para cada sección, complete los campos requeridos.</li>
+            <li>Si necesita añadir más registros en cualquiera de las secciones, haga clic en el botón "Añadir". Esto guardará el registro actual y limpiará el formato para que pueda añadir uno nuevo.</li>
+            <li><strong>Finalización del Ejercicio:</strong> Una vez completado el formato, haga clic en el botón "Guardar". Esto generará un resumen editable del Plan de Trabajo Anual, el cual podrá revisar y ajustar si es necesario.</li>
+        </ol>
+
+        <h3>Discusión:</h3>
+        <p>Una vez que todos hayan completado el formato, procederemos a discutir los resultados y sugerencias para el modelo del Plan de Trabajo Anual.</p>
+
+        <h3>Notas Adicionales:</h3>
+        <ul>
+            <li>Asegúrese de llenar todos los campos obligatorios para evitar inconsistencias en el registro.</li>
+            <li>Recuerde que este ejercicio es un ensayo práctico, y cualquier duda o dificultad será atendida durante la discusión posterior.</li>
+        </ul>
+
+        <div class="button-container">
+            <button onclick="showForm()">Llenar Formato</button>
+        </div>
+    </div>
+
+    
+            </form>
+			
+        </div>
+		
+		
+		
+    </div>
+	
+	<div class="container form-section" id="form">
+        <h1>PLAN DE TRABAJO ANUAL</h1>
+
+<!-- Secciones con títulos fijos -->
+
+<div class="section-container">
+    <h2>1. Dirección de Asignaturas</h2>
+    <table id="asignaturas">
+        <thead>
+            <tr>
+                <th>Año</th>
+                <th>Periodo</th>
+                <th>Código</th>
+                <th>Grupo</th>
+                <th>Asignatura</th>
+                <th>Horas clase semanal</th>
+                <th>Horas asesoría</th>
+                <th>Horas semestrales</th>
+                <th>Horario</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr contenteditable="true" class="editable">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="align-right" onclick="addRow('asignaturas')">Añadir fila</button>
+</div>
+
+<div class="section-container">
+    <h2>2. Dirección de Trabajos de Grado</h2>
+    <table id="trabajosGrado">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Título</th>
+                <th>Autores</th>
+                <th>Nivel</th>
+                <th>Horas</th>
+                <th>Horas semestrales</th>
+                <th>Horario</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr contenteditable="true" class="editable">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="align-right" onclick="addRow('trabajosGrado')">Añadir fila</button>
+</div>
+
+<div class="section-container">
+    <h2>3. Investigación</h2>
+
+    <h3>Dirección y Codirección de Trabajo de Investigación de Posgrado y Tesis Doctorales</h3>
+    <table id="direccionCodireccionTrabajo">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Título</th>
+                <th>Proyecto</th>
+                <th>Autor</th>
+                <th>Nivel</th>
+                <th>Fecha de inicio</th>
+                <th>Horas semanales</th>
+                <th>Total Horas semestre</th>
+                <th>Total Horas por año</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr contenteditable="true" class="editable">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="align-right" onclick="addRow('direccionCodireccionTrabajo')">Añadir fila</button>
+
+    <h3>Gestión de Proyectos de Investigación</h3>
+    <table id="gestionProyectosInternos">
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Proyecto</th>
+                <th>Rol</th>
+                <th>Fase</th>
+                <th>Fecha de inicio</th>
+                <th>Fecha de finalización</th>
+                <th>Horas semestre</th>
+                <th>Total Horas año</th>
+                <th>Total Horas</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr contenteditable="true" class="editable">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="align-right" onclick="addRow('gestionProyectosInternos')">Añadir fila</button>
+
+    <h3>Escritura de Artículos Científicos</h3>
+    <table id="escrituraArticulos">
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Autores</th>
+                <th>Filiación</th>
+                <th>Revista</th>
+                <th>Fecha de inicio</th>
+                <th>Fecha de finalización</th>
+                <th>Horas semestre</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr contenteditable="true" class="editable">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="align-right" onclick="addRow('escrituraArticulos')">Añadir fila</button>
+
+    <h3>Participación en Eventos Científicos</h3>
+    <table id="participacionEventos">
+        <thead>
+            <tr>
+                <th>Nombre del evento</th>
+                <th>Rol</th>
+                <th>Fecha de inicio</th>
+                <th>Fecha de finalización</th>
+                <th>Horas semestrales</th>
+                <th>Total Horas Anual</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr contenteditable="true" class="editable">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                
+            </tr>
+        </tbody>
+    </table>
+    <button class="align-right" onclick="addRow('participacionEventos')">Añadir fila</button>
+
+    <h3>Participación en Comités Editoriales de Revistas Científicas</h3>
+    <table id="comitesEditoriales">
+        <thead>
+            <tr>
+                <th>Nombre de la revista</th>
+                <th>Rol</th>
+                <th>Fecha de inicio</th>
+                <th>Fecha de finalización</th>
+                <th>Horas semestrales</th>
+                <th>Total Horas Anual</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr contenteditable="true" class="editable">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                
+            </tr>
+        </tbody>
+    </table>
+    <button class="align-right" onclick="addRow('comitesEditoriales')">Añadir fila</button>
+
+    <h3>Participación en Asociaciones Científicas</h3>
+    <table id="asociacionesCientificas">
+        <thead>
+            <tr>
+                <th>Nombre de la Asociación</th>
+                <th>Rol</th>
+                <th>Fecha de inicio</th>
+                <th>Fecha de finalización</th>
+                <th>Horas semestrales</th>
+                <th>Total Horas Anual</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr contenteditable="true" class="editable">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                
+            </tr>
+        </tbody>
+    </table>
+    <button class="align-right" onclick="addRow('asociacionesCientificas')">Añadir fila</button>
+	<!-- Reconocimiento como investigador -->
+    <h3>Reconocimiento como investigador junior, asociado, senior o emérito por el ministerio de ciencia y tecnología</h3>
+    <table id="reconocimientoInvestigador">
+        <thead>
+            <tr>
+                <th>Grupo de investigación</th>
+                <th>Categoría</th>
+                <th>Fecha de obtención del reconocimiento</th>
+                <th>Fecha de finalización del reconocimiento</th>
+                <th>Horas semestrales</th>
+                <th>Total Horas Anual</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr contenteditable="true" class="editable">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="align-right" onclick="addRow('reconocimientoInvestigador')">Añadir fila</button>
+
+    <!-- Creación y participación en semilleros -->
+    <h3>Creación y participación en semilleros de investigación reconocidos por la VIE</h3>
+    <table id="semillerosInvestigacion">
+        <thead>
+            <tr>
+                <th>Nombre del semillero</th>
+                <th>Convocatoria a presentarse</th>
+                <th>Fase</th>
+                <th>Fecha de inicio de la actividad</th>
+                <th>Fecha de finalización de la actividad</th>
+                <th>Horas semestrales</th>
+                <th>Total Horas Anual</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr contenteditable="true" class="editable">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="align-right" onclick="addRow('semillerosInvestigacion')">Añadir fila</button>
+
+    <!-- Gestión de proyectos de investigación -->
+    <h3>Gestión de proyectos de investigación en convocatorias internacionales</h3>
+    <table id="gestionProyectosInvestigacion">
+        <thead>
+            <tr>
+                <th>Título del Proyecto</th>
+                <th>Proyecto</th>
+                <th>Rol</th>
+                <th>Entidades participantes</th>
+                <th>Fase</th>
+                <th>Fecha de inicio de la actividad</th>
+                <th>Fecha de finalización de la actividad</th>
+                <th>Horas semestre</th>
+                <th>Total Horas año</th>
+                <th>Total Horas</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr contenteditable="true" class="editable">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="align-right" onclick="addRow('gestionProyectosInvestigacion')">Añadir fila</button>
+
+    <!-- Obtención de patentes -->
+    <h3>Obtención de patentes</h3>
+    <table id="obtencionPatentes">
+        <thead>
+            <tr>
+                <th>Nombre del producto</th>
+                <th>Trámite de reconocimiento o convocatoria a presentarse</th>
+                <th>Fase</th>
+                <th>Fecha de inicio de la actividad</th>
+                <th>Fecha de finalización de la actividad</th>
+                <th>Horas semestrales</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr contenteditable="true" class="editable">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="align-right" onclick="addRow('obtencionPatentes')">Añadir fila</button>
+
+    <!-- Generación y mantenimiento de Spin-OFF -->
+    <h3>Generación y mantenimiento de Spin-OFF</h3>
+    <table id="generacionSpinOff">
+        <thead>
+            <tr>
+                <th>Nombre de la empresa</th>
+                <th>Rol</th>
+                <th>Entidades participantes</th>
+                <th>Fase</th>
+                <th>Fecha de inicio de la actividad</th>
+                <th>Fecha de finalización de la actividad</th>
+                <th>Horas semestre</th>
+                <th>Total Horas año</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr contenteditable="true" class="editable">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="align-right" onclick="addRow('generacionSpinOff')">Añadir fila</button>
+</div>
+	
+	
+	<div class="section-container">
+	<h2>Extensión</h2>
+<table id="extension">
+    <thead>
+        <tr>
+            <th>Actividad</th>
+            <th>Nombre del programa, proyecto o servicio</th>
+            <th>Horas Semanales (Si la actividad recibe descarga)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr contenteditable="true" class="editable">
+            <td>Coordinación de programas autofinanciados</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr contenteditable="true" class="editable">
+            <td>Desarrollo de Proyecto de extensión solidaria</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr contenteditable="true" class="editable">
+            <td>Desarrollo de Proyecto de extensión no solidaria</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr contenteditable="true" class="editable">
+            <td>Coordinación de laboratorios</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr contenteditable="true" class="editable">
+            <td>Consultoría especializada</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr contenteditable="true" class="editable">
+            <td>Otros</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+<button class="align-right" onclick="addRow('extension')">Añadir fila</button>
+</div>
+
+<div class="section-container">
+<h2>Funciones Académico Administrativas</h2>
+<table id="funcionesAcademicoAdministrativas">
+    <thead>
+        <tr>
+            <th>Actividad</th>
+            <th>Horas Semestrales</th>
+            <th>Horario</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr contenteditable="true" class="editable">
+            <td>Dirección de Escuela</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr contenteditable="true" class="editable">
+            <td>Coordinación Académica de programa</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr contenteditable="true" class="editable">
+            <td>Comité curricular pregrado</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr contenteditable="true" class="editable">
+            <td>Comité curricular posgrado</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr contenteditable="true" class="editable">
+            <td>Reforma académica de programa</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr contenteditable="true" class="editable">
+            <td>Líder Proyecto Plan de mejoramiento del programa</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr contenteditable="true" class="editable">
+            <td>Acreditación ABET</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr contenteditable="true" class="editable">
+            <td>Nodo Proceso de autoevaluación del programa</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr contenteditable="true" class="editable">
+            <td>Representante profesoral (Consejo de Escuela, Consejo de Facultad, CA, CS, ¿?)</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+<button class="align-right" onclick="addRow('funcionesAcademicoAdministrativas')">Añadir fila</button>
+</div>
+
+<!-- Botón para guardar e imprimir -->
+<button class="align-right" onclick="saveAndPrint()">Guardar e Imprimir</button>
+
+
+                    <button type="button" onclick="goBack()">Volver a Instrucciones</button>
+                </div>
+
+    <script>
+        function showForm() {
+            document.getElementById('instructions').classList.add('hidden');
+            document.getElementById('form').classList.add('active');
+        }
+
+        function goBack() {
+            document.getElementById('instructions').classList.remove('hidden');
+            document.getElementById('form').classList.remove('active');
+        }
+
+        function saveForm() {
+            alert('Formato guardado. Puede revisar y ajustar el resumen si es necesario.');
+            // Aquí puedes agregar la lógica para guardar el formato
+        }
+		
+		function addRow(tableId) {
+        var table = document.getElementById(tableId);
+        var row = table.insertRow(-1);
+        var cols = table.rows[0].cells.length;
+        for (var i = 0; i < cols; i++) {
+            var cell = row.insertCell(i);
+            cell.contentEditable = "true";
+            cell.className = "editable";
+        }
+    }
+
+    function saveAndPrint() {
+        var sections = {
+            'asignaturas': 'Dirección de Asignaturas',
+            'trabajosGrado': 'Dirección de Trabajos de Grado',
+            'direccionCodireccionTrabajo': 'Dirección y Codirección de Trabajo',
+            'gestionProyectosInternos': 'Gestión de Proyectos Internos',
+            'escrituraArticulos': 'Escritura de Artículos',
+            'participacionEventos': 'Participación en Eventos',
+            'comitesEditoriales': 'Comités Editoriales',
+            'asociacionesCientificas': 'Asociaciones Científicas',
+            'reconocimientoInvestigador': 'Reconocimiento como Investigador',
+            'semillerosInvestigacion': 'Semilleros de Investigación',
+            'gestionProyectosInvestigacion': 'Gestión de Proyectos de Investigación',
+            'obtencionPatentes': 'Obtención de Patentes',
+            'generacionSpinOff': 'Generación de Spin-OFF',
+            'extension': 'Extensión',
+            'funcionesAcademicoAdministrativas': 'Funciones Académico Administrativas'
+        };
+
+        var investigacionTables = [
+            'direccionCodireccionTrabajo',
+            'gestionProyectosInternos',
+            'escrituraArticulos',
+            'participacionEventos',
+            'comitesEditoriales',
+            'asociacionesCientificas',
+            'reconocimientoInvestigador',
+            'semillerosInvestigacion',
+            'gestionProyectosInvestigacion',
+            'obtencionPatentes',
+            'generacionSpinOff'
+        ];
+
+        var savedData = {};
+        var hasData = false;
+        var investigacionHasData = false;
+
+        Object.keys(sections).forEach(function(tableId) {
+            var table = document.getElementById(tableId);
+            var rows = table.getElementsByTagName('tr');
+            var isEmpty = true;
+
+            for (var i = 0; i < rows.length; i++) {
+                var cells = rows[i].getElementsByTagName('td');
+                for (var j = 0; j < cells.length; j++) {
+                    if (cells[j].innerText.trim() !== '') {
+                        isEmpty = false;
+                        break;
+                    }
+                }
+                if (!isEmpty) break;
+            }
+
+            if (!isEmpty) {
+                savedData[sections[tableId]] = table.innerHTML;
+                hasData = true;
+
+                // Verifica si la tabla pertenece a la sección de "Investigación"
+                if (investigacionTables.includes(tableId)) {
+                    investigacionHasData = true;
+                }
+            }
+        });
+
+        if (hasData) {
+            localStorage.setItem('tablesData', JSON.stringify(savedData));
+
+            var printWindow = window.open('', '', 'height=600,width=800');
+            printWindow.document.write('<html><head><title>Impresión de Tablas</title><style>table {width: 100%; border-collapse: collapse; margin-bottom: 20px;} th, td {border: 1px solid black; padding: 8px; text-align: left;} th {background-color: #f2f2f2;} .editable {background-color: #e7f3fe;} .section-container {border: 2px solid black; padding: 10px; margin-bottom: 20px;}</style></head><body>');
+
+            printWindow.document.write('<h1>PLAN DE TRABAJO ANUAL</h1>');
+
+            // Imprimimos las tablas, garantizando el orden
+            for (var section in savedData) {
+                if (savedData.hasOwnProperty(section)) {
+                    var tableData = savedData[section];
+                    if (tableData) {
+                        // Si imprimimos la tabla de "Dirección de Trabajos de Grado", verificamos si luego viene "Investigación"
+                        if (section === 'Dirección de Trabajos de Grado' && investigacionHasData) {
+                            printWindow.document.write('<h3>' + section + '</h3>');
+                            printWindow.document.write('<table>' + tableData + '</table>');
+                            printWindow.document.write('<h2>Investigación</h2>'); // Imprime el título "Investigación" después
+                        } else {
+                            // Solo imprimimos las tablas si están llenas
+                            printWindow.document.write('<h3>' + section + '</h3>');
+                            printWindow.document.write('<table>' + tableData + '</table>');
+                        }
+                    }
+                }
+            }
+
+            printWindow.document.write('</body></html>');
+            printWindow.document.close();
+            printWindow.focus();
+            printWindow.print();
+        } else {
+            alert('No hay datos para imprimir.');
+        }
+    }
+
+    </script>
+
+</body>
+</html>
