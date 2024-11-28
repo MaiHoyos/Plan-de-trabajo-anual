@@ -3,89 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taller Plan de Trabajo Anual</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
-        margin: 0;
-        padding: 20px;
-    }
+    <title>Plan de Trabajo Anual</title>
+    <style>
+        body {
+            font-family: 'Humans521BT', sans-serif; 
+            margin: 12px;
+            
+        }
 
-    .container {
-        background-color: #fff;
-        border-radius: 10px;
-        padding: 20px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
+        .seccion {
+            margin-bottom: 20px;
+        }
 
-    h1 {
-        text-align: center;
-        color: #333;
-    }
+        .seccion h2 {
+            color: #2c3e50;
+        }
 
-    p {
-        margin: 10px 0;
-        color: #555;
-    }
+        .oculto {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
 
-    ul {
-        margin: 10px 0;
-    }
+        .btn {
+            padding: 10px 15px;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
 
-    ul li {
-        margin-bottom: 10px;
-    }
+        .btn:hover {
+            background-color: #0056b3;
+        }
 
-    .button-container {
-        text-align: center;
-        margin-top: 20px;
-    }
-
-    button {
-        background-color: #d1d1d1;
-        color: black;
-        padding: 8px 16px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 16px;
-    }
-
-    button:hover {
-        background-color: #45a049;
-    }
-
-    button {
-        margin-top: 10px;
-    }
-
-    .align-right {
-        display: block;
-        margin-left: auto;
-        margin-right: 0;
-    }
-
-    .hidden {
-        display: none;
-    }
-
-    .form-section {
-        display: none;
-    }
-
-    .active {
-        display: block;
-    }
-
-    .form-container {
-        background-color: #fff;
-        border-radius: 10px;
-        padding: 20px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-    table {
+        table {
         width: 100%;
         table-layout: fixed; /* Fijar el ancho de la tabla */
         border-collapse: collapse;
@@ -110,46 +65,8 @@
     .editable {
         background-color: #ffffff;
     }
-
-    @media print {
-        body {
-            font-size: 12px;
-        }
-
-        table {
-            width: 100%;
-            table-layout: fixed;
-            border-collapse: collapse;
-            page-break-inside: auto;
-        }
-
-        th, td {
-            border: 1px solid black;
-            padding: 5px;
-            text-align: center;
-            vertical-align: middle;
-        }
-
-        thead {
-            display: table-header-group;
-        }
-
-        tr {
-            page-break-inside: avoid;
-            page-break-after: auto;
-        }
-
-        #printButton {
-            display: none;
-        }
-    }
 	
-	th, td {
-    
-    font-size: 14px; /* Añade esta línea para disminuir el tamaño de letra */
-}
-
-/* Estilos para el modal */
+	/* Estilos para el modal */
 .modal {
   display: none;
   position: fixed;
@@ -184,190 +101,205 @@
   cursor: pointer;
 }
 
+.header-container {
+    display: flex;
+    align-items: center;
+}
 
+h2 {
+    text-align: left;
+    margin: 0;
+}
 
-</style>
+.circle-button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #32afe9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px; /* Espacio entre el texto y el botón */
+}
 
+.circle-button:hover {
+    background-color: #2da1d6; /* Un verde más oscuro al pasar el mouse */
+}
 
+.rectangular-section {
+    background-color: #f8f8f8;
+    padding: 20px; /* Espaciado interno para que el contenido no quede pegado al borde */
+    border-radius: 8px; /* Bordes redondeados si lo deseas */
+    margin: 20px 0; /* Espacio alrededor de la sección */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra ligera para un efecto de profundidad */
+}
+
+.rectangular-section h3 {
+    margin-top: 0; /* Para que no haya espacio innecesario arriba del título */
+}
+
+.rectangular-section p {
+    line-height: 1.6; /* Para mejorar la legibilidad del texto */
+}
+    </style>
+    
 </head>
 <body>
+    <div class="container form-section" id="form">
+        <h1 style="text-align: center;">UNIVERSIDAD INDUSTRIAL DE SANTANDER</h1>
+		<h1 style="text-align: center;">PLAN DE TRABAJO ANUAL</h1>
 
-    <div class="container" id="instructions">
-    <h1>Taller Plan de Trabajo Anual</h1>
+    
+    
 
-    <h3>Objetivo del Taller:</h3>
-    <p>El objetivo de este taller es presentar un modelo del Plan de Trabajo Anual. Durante el taller, los participantes llenarán un formato de manera práctica, para luego discutir sus observaciones y sugerencias en grupo.</p>
+<div class="rectangular-section">
+    <div class="section-container">
+        <table id="InformaciónGeneral">
+            <thead>
+                <tr>
+                    <th colspan="8">Información personal del profesor</th>
+                    <th colspan="2">Fechas</th>
+                    <th>Día</th>
+                    <th>Mes</th>
+                    <th>Año</th>
+                </tr>
+                <tr>
+                    <th colspan="2">Facultad</th>
+                    <th colspan="6" contenteditable="true" class="editable"></th> 
+                    <th colspan="2" >Propuesta</th>
+                    <th contenteditable="true" class="editable fecha"></th>
+                    <th contenteditable="true" class="editable fecha"></th>
+                    <th contenteditable="true" class="editable fecha"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="2">Escuela o Departamento</td>
+                    <td colspan="6" contenteditable="true" class="editable"></td> 
+                    <td colspan="2">Presentación en el claustro de profesores</td>
+                    <td contenteditable="true" class="editable fecha"></td>
+                    <td contenteditable="true" class="editable fecha"></td>
+                    <td contenteditable="true" class="editable fecha"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">Nombre del profesor</td>
+                    <td colspan="6" contenteditable="true" class="editable"></td> 
+                    <td colspan="2">Revisión y aval en el Consejo de Escuela</td>
+                    <td contenteditable="true" class="editable fecha"></td>
+                    <td contenteditable="true" class="editable fecha"></td>
+                    <td contenteditable="true" class="editable fecha"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">No. Identificación</td>
+                    <td colspan="6" contenteditable="true" class="editable"></td> 
+                    <td colspan="2">Aprobación Decanato/Instituto correspondiente</td>
+                    <td contenteditable="true" class="editable fecha"></td>
+                    <td contenteditable="true" class="editable fecha"></td>
+                    <td contenteditable="true" class="editable fecha"></td>
+                </tr>
+            </tbody>
+        </table>
+</div>
 
-    <h3>Instrucciones:</h3>
-    <ol>
-        <li><strong>Inicio del Ejercicio:</strong> Haga clic en el botón "Llenar Formato". Esto abrirá el formato del Plan de Trabajo Anual que debe completar.</li>
-        <li><strong>Llenado de Campos:</strong> El formato está dividido en cuatro secciones principales: Función Docencia, Investigación, Extensión, y Funciones académico administrativas. Para cada sección, complete los campos requeridos.</li>
-        
-        <li><strong>Finalización del Ejercicio:</strong> Una vez completado el formato, haga clic en el botón "Guardar". Esto generará un resumen del Plan de Trabajo Anual, el cual podrá revisar y ajustar si es necesario.</li>
-    </ol>
 
-  
+   
 
-    <h3>Discusión:</h3>
-    <p>Una vez que todos hayan completado el formato, procederemos a discutir los resultados y sugerencias para el modelo del Plan de Trabajo Anual.</p>
-
-    <h3>Notas Adicionales:</h3>
-    <ul>
-    <li style="font-size: 1.1em;"><strong>La mayor parte de los campos se llenarán automáticamente con información tomada directamente de los sistemas de información de la universidad. Esto facilitará el proceso, ahorrando tiempo y evitando la entrada manual de datos repetitivos.</strong></li>
-    <li style="font-size: 1.1em;"><strong>Recuerde que este ejercicio es un ensayo práctico, y cualquier duda o dificultad será atendida durante la discusión posterior.</strong></li>
-</ul>
-
-
-    <div class="button-container">
-        <button onclick="showForm()">Llenar Formato</button>
+<div class="rectangular-section">
+    <!-- Sección Docencia -->
+    <div class="seccion">
+    <div class="header-container">
+        <h2 style="text-align: left;">Docencia</h2>
+        <button class="circle-button" onclick="toggleSeccion('docencia')">+</button>
+    </div>
+    <div id="docencia" class="oculto">
+        <h3>Agregar actividad de Docencia</h3>
+        <table border="1" cellspacing="0" cellpadding="4">
+            <thead>
+                <tr>
+                    <th rowspan="2">TIPO DE ACTIVIDAD</th>
+                    <th rowspan="2">No ACT.</th>
+                    <th colspan="9">DESCRIPCIÓN DE LA ACTIVIDAD</th>
+                    <th style="color:red;" rowspan="2">EVIDENCIA (si lo requiere)</th>
+					<th style="color:red;" rowspan="2" class="oculto">Autoevaluación / Porcentaje de avance</th>
+                </tr>
+                <tr>
+                    <th style="width: 100px;">Año</th>
+                    <th style="width: 100px;">Periodo</th>
+                    <th style="width: 100px;">Código</th>
+                    <th style="width: 100px;">Grupo</th>
+                    <th style="width: 100px;">Asignatura</th>
+                    <th style="width: 100px;">Horas clase semanal</th>
+                    <th style="width: 100px;">Horas asesoría</th>
+                    <th style="width: 100px;">Horas semestrales</th>
+                    <th style="width: 100px;">Horario</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="10000">Docencia</td>
+                    <td>Doc1.</td>
+                    <td>
+                        <select style="appearance: none; border: none; background-color: transparent; padding-right: 20px; font-size: inherit; float: right; background-image: url('data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 10 10&quot;><path fill=&quot;none&quot; stroke=&quot;gray&quot; stroke-width=&quot;1&quot; d=&quot;M1 3l3 3 3-3&quot;/></svg>'); background-repeat: no-repeat; background-position: right 5px center; background-size: 10px;">
+                <option value=" "> </option>
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+                <option value="2026">2026</option>
+            </select>
+                    </td>
+                    <td>
+                        <select style="appearance: none; border: none; background-color: transparent; padding-right: 20px; font-size: inherit; float: right; background-image: url('data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 10 10&quot;><path fill=&quot;none&quot; stroke=&quot;gray&quot; stroke-width=&quot;1&quot; d=&quot;M1 3l3 3 3-3&quot;/></svg>'); background-repeat: no-repeat; background-position: right 5px center; background-size: 10px;">
+                            <option value=" "> </option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select>
+                    </td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true" id="cell4" oninput="calculateSum3()"></td>
+                    <td contenteditable="true" id="cell5" oninput="calculateSum3()"></td>
+                    <td id="resultCell"></td>
+                    <td onclick="openModal(this)">Click para editar el horario</td>
+                    <td contenteditable="true"></td>
+					<td contenteditable="true"class="oculto"></td>
+                    
+                </tr>
+                <tr>
+                    <td colspan="11" style="text-align: right;">
+                        <button onclick="insertarFila6(this)">Añadir Fila</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>
 
-		
-		
-		
+
+
+
+    <!-- Sección Investigación -->
+     <div class="seccion">
+    <div class="header-container">
+        <h2 style="text-align: left;">Investigación</h2>
+        <button class="circle-button" onclick="toggleSeccion('Investigación')">+</button>
     </div>
-	
-	<div class="container form-section" id="form">
-        <h1>UNIVERSIDAD INDUSTRIAL DE SANTANDER</h1>
-		<h1>PLAN DE TRABAJO ANUAL</h1>
+    <div id="Investigación" class="oculto">
+       
 
 
-	<div class="section-container">
-    
-    <table id="InformaciónGeneral">
-    <thead>
-        <tr>
-            <th colspan="8">Información personal del profesor</th>
-            <th>Fechas</th>
-            <th>Día</th>
-            <th>Mes</th>
-            <th>Año</th>
-        </tr>
-        <tr>
-            <th colspan="2">Facultad</th>
-            <th colspan="6" contenteditable="true" class="editable""> </th> 
-            <th>Propuesta</th>
-            <th contenteditable="true" class="editable"> </th>
-            <th contenteditable="true" class="editable"> </th>
-            <th contenteditable="true" class="editable"> </th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td colspan="2">Escuela o Departamento</td>
-            <td colspan="6" contenteditable="true" class="editable"></td> 
-            <td>Presentación en el claustro de profesores</td>
-            <td contenteditable="true" class="editable"></td>
-            <td contenteditable="true" class="editable"></td>
-            <td contenteditable="true" class="editable"></td>
-        </tr>
-        <tr>
-            <td colspan="2">Nombre del profesor</td>
-            <td colspan="6" contenteditable="true" class="editable"></td> 
-            <td>Revisión y aval en el Consejo de Escuela</td>
-            <td contenteditable="true" class="editable"></td>
-            <td contenteditable="true" class="editable"></td>
-            <td contenteditable="true" class="editable"></td>
-        </tr>
-        <tr >
-            <td colspan="2">No. Identificación</td>
-            <td colspan="6" contenteditable="true" class="editable"></td> 
-            <td>Aprobación Decanato/Instituto correspondiente</td>
-            <td contenteditable="true" class="editable"></td>
-            <td contenteditable="true" class="editable"></td>
-            <td contenteditable="true" class="editable"></td>
-        </tr>
-    </tbody>
-</table>
-
-<table border="1" cellspacing="0" cellpadding="4">
-    <thead>
-        <tr>
-            <th rowspan="2">TIPO DE ACTIVIDAD</th>
-            <th rowspan="2">No ACT.</th>
-            <th colspan="9">DESCRIPCIÓN DE LA ACTIVIDAD</th>
-            
-            <th colspan="3">INDICADOR DE CUMPLIMIENTO</th>
-            <th style="color:red;" rowspan="2">META DEL INDICADOR</th>
-        </tr>
-		<tr>
-            <th style="width: 100px;">Año</th>
-            <th style="width: 100px;">Periodo</th>
-            <th style="width: 100px;">Código</th>
-            <th style="width: 100px;">Grupo</th>
-            <th style="width: 100px;">Asignatura</th>
-            <th style="width: 100px;">Horas clase semanal</th>
-            <th style="width: 100px;">Horas asesoría</th>
-            <th style="width: 100px;">Horas semestrales</th>
-            <th style="width: 100px;">Horario</th>
-	    <th style="color:red;" style="width: 100px;">Nombre</th>
-            <th style="color:red;" style="width: 100px;">Método de cálculo</th>
-            <th style="color:red;" style="width: 100px;">Unidad de medida</th>
-        </tr>
-		
-		
-        
-    </thead>
-    <tbody>
-	
-        <!-- Sección Docencia -->
-        <tr>
-            <td rowspan="10000">Docencia</td>
-            <td>Doc1.</td>
-            
-			 <td>
-				  <select style="appearance: none; border: none; background-color: transparent; padding-right: 20px; font-size: inherit;float: right; background-image: url('data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 10 10&quot;><path fill=&quot;none&quot; stroke=&quot;gray&quot; stroke-width=&quot;1&quot; d=&quot;M1 3l3 3 3-3&quot;/></svg>'); background-repeat: no-repeat; background-position: right 5px center; background-size: 10px;">
-						<option value=" "> </option>
-						<option value="2024">2024</option>
-						<option value="2025">2025</option>
-						<option value="2026">2026</option>
-				  </select>
-			</td>
-           
-			<td>
-				  <select style="appearance: none; border: none; background-color: transparent; padding-right: 20px; font-size: inherit; float: right; background-image: url('data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 10 10&quot;><path fill=&quot;none&quot; stroke=&quot;gray&quot; stroke-width=&quot;1&quot; d=&quot;M1 3l3 3 3-3&quot;/></svg>'); background-repeat: no-repeat; background-position: right 5px center; background-size: 10px;">
-						<option value=" "> </option>
-						<option value="2024">1</option>
-						<option value="2025">2</option>
-				  </select>
-			</td>
-
-			
-            
-			<td contenteditable="true"></td>
-			<td contenteditable="true"></td>
-			<td contenteditable="true"></td>
-			<td contenteditable="true" id="cell4" oninput="calculateSum3()"></td>
-			<td contenteditable="true" id="cell5" oninput="calculateSum3()"></td>
-			<td id="resultCell"></td>
-			<!-- Celda que abre el modal -->
-			<td onclick="openModal(this)">Click para editar el horario</td>
-
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-			<td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-			
-			
-			
-        </tr>
-        
-        
-		<tr>
-                <td colspan="14" style="text-align: right;"> <button style="border: none;" onclick="insertarFila6(this)">Añadir Fila</button>
-</td>
-				
-            </tr>
-		
-
-<table border="1" cellspacing="0" cellpadding="4">		
-
-        <!-- Sección Investigación -->
+        <h3>Agregar actividad de Investigación</h3>
+        <table border="1" cellspacing="0" cellpadding="4">
+		<!-- Sección Investigación -->
 		<thead>
             <tr>
                 <th rowspan="2">Tipo de actividad</th>
-                <th colspan="14" rowspan="2" >Actividad</th>
+                <th colspan="12" rowspan="2" >Actividad</th>
             </tr>
 			<tr>
 			
@@ -380,8 +312,8 @@
             <!-- Dirección y Codirección de Trabajos -->
             <tr class="sub-header">
 				<td rowspan="10000">Investigación</td> 
-                <td colspan="10" style="background-color: #f2f2f2;">Dirección y Codirección de Trabajo de Investigación de Posgrado y Tesis Doctorales</td>
-				<td colspan="4" style="background-color: #f2f2f2;">Indicador de cumplimiento</td>
+                <td colspan="12" style="background-color: #f2f2f2;">Dirección y Codirección de Trabajo de Investigación de Posgrado y Tesis Doctorales</td>
+				
 				
             </tr>
             <tr>
@@ -395,10 +327,9 @@
     <th>Horas semanales</th>
     <th>Horas semestre</th>
     <th>Horas año</th>
-    <th style="color:red;">Nombre</th>
-    <th style="color:red;">Método de cálculo</th>
-    <th style="color:red;">Unidad de medida</th>
-    <th style="color:red;">Meta del indicador</th>
+    <th>EVIDENCIA (si lo requiere)</th>
+    <th style="color:red;" class="oculto">Autoevaluación / Porcetanje de avance</th>
+    
 </tr>
 <tr>
     <td contenteditable="true"></td>
@@ -412,12 +343,11 @@
     <td id="resultCell2_original"></td>
     <td contenteditable="true"></td>
     <td contenteditable="true"></td>
-    <td contenteditable="true"></td>
-    <td contenteditable="true"></td>
-    <td contenteditable="true"></td>
+    <td contenteditable="true" class="oculto"></td>
+    
 </tr>
 <tr>
-    <td colspan="14" style="text-align: right;">
+    <td colspan="12" style="text-align: right;">
         <button style="border: none;" onclick="insertarFila(this)">Añadir Fila</button>
     </td>
 </tr>
@@ -425,8 +355,8 @@
             
             <!-- Gestión de Proyectos de Investigación -->
             <tr class="sub-header">
-			    <td colspan="10" style="background-color: #f2f2f2;">Gestión de Proyectos de Investigación</td>
-				<td colspan="4" style="background-color: #f2f2f2;">Indicador de cumplimiento</td>
+			    <td colspan="12" style="background-color: #f2f2f2;">Gestión de Proyectos de Investigación</td>
+				
             </tr>
 			
             <tr>
@@ -440,23 +370,21 @@
                 <th>Horas semanales</th>
                 <th>Horas semestre</th>
                 <th>Horas año</th>
-                <th style="color:red;">Nombre</th>
-				<th style="color:red;">Método de cálculo</th>
-				<th style="color:red;">Unidad de medida</th>
-                <th style="color:red;">Meta del indicador</th>
+                <th>EVIDENCIA (si lo requiere)</th>
+				<th style="color:red;" class="oculto">Autoevaluación / Porcetanje de avance</th>
             </tr>
             
 			
 			
 			
 			<tr>
-                <td colspan="14" style="text-align: right;"> <button style="border: none;" onclick="insertarFila(this)">Añadir Fila</button></td>				
+                <td colspan="12" style="text-align: right;"> <button style="border: none;" onclick="insertarFila(this)">Añadir Fila</button></td>				
             </tr>
 			
             <!-- Escritura de Artículos Científicos -->
             <tr class="sub-header">
-				<td colspan="10" style="background-color: #f2f2f2;">Escritura de Artículos Científicos</td>
-				<td colspan="4" style="background-color: #f2f2f2;">Indicador de cumplimiento</td>
+				<td colspan="12" style="background-color: #f2f2f2;">Escritura de Artículos Científicos</td>
+				
             </tr>
             <tr>
 				<th>N° Acta</th>
@@ -469,22 +397,20 @@
                 <th>Horas semanales</th>
                 <th>Horas semestre</th>
                 <th>Horas año</th>
-                <th style="color:red;">Nombre</th>
-				<th style="color:red;">Método de cálculo</th>
-				<th style="color:red;">Unidad de medida</th>
-                <th style="color:red;">Meta del indicador</th>
+                <th>EVIDENCIA (si lo requiere)</th>
+				<th style="color:red;" class="oculto">Autoevaluación / Porcetanje de avance</th>
             </tr>
             
 			
 			<tr>
-                <td colspan="14" style="text-align: right;"> <button style="border: none;" onclick="insertarFila(this)">Añadir Fila</button></td>				
+                <td colspan="12" style="text-align: right;"> <button style="border: none;" onclick="insertarFila(this)">Añadir Fila</button></td>				
             </tr>
 			
 			
 			<!-- Participación en eventos Científicos -->
             <tr class="sub-header">
-				<td colspan="10" style="background-color: #f2f2f2;">Participación en Eventos Científicos</td>
-				<td colspan="4" style="background-color: #f2f2f2;">Indicador de cumplimiento</td>
+				<td colspan="12" style="background-color: #f2f2f2;">Participación en Eventos Científicos</td>
+				
             </tr>
             <tr>
 				<th>N°Acta</th>
@@ -496,23 +422,21 @@
                 <th>Horas semanales</th>
                 <th>Horas semestre</th>
                 <th>Horas año</th>
-                <th style="color:red;">Nombre</th>
-				<th style="color:red;">Método de cálculo</th>
-				<th style="color:red;">Unidad de medida</th>
-                <th style="color:red;">Meta del indicador</th>
+                <th>EVIDENCIA (si lo requiere)</th>
+				<th style="color:red;" class="oculto">Autoevaluación / Porcetanje de avance</th>
                 
             </tr>
             
 			
 			<tr>
-                <td colspan="14" style="text-align: right;"><button style="border: none;" onclick="insertarFila2(this)">Añadir Fila</button></td>				
+                <td colspan="12" style="text-align: right;"><button style="border: none;" onclick="	(this)">Añadir Fila</button></td>				
             </tr>
 			
 			
 			<!-- Participación en Comités editoriales de revistas Científicas -->
             <tr class="sub-header">
-				<td colspan="10" style="background-color: #f2f2f2;">Participación en comités editoriales de revistas científicas</td>
-				<td colspan="4" style="background-color: #f2f2f2;">Indicador de cumplimiento</td>
+				<td colspan="12" style="background-color: #f2f2f2;">Participación en comités editoriales de revistas científicas</td>
+				
             </tr>
             <tr>
 				<th>N° Acta</th>
@@ -523,21 +447,19 @@
                 <th>Horas semanales</th>
                 <th>Horas semestre</th>
                 <th>Horas año</th>
-                <th style="color:red;">Nombre</th>
-				<th style="color:red;">Método de cálculo</th>
-				<th style="color:red;">Unidad de medida</th>
-				<th style="color:red;">Meta del indicador</th>
+                <th>EVIDENCIA (si lo requiere)</th>
+				<th style="color:red;" class="oculto">Autoevaluación / Porcetanje de avance</th>
             </tr>
             
 			
 			<tr>
-                <td colspan="14" style="text-align: right;"><button style="border: none;" onclick="insertarFila3(this)">Añadir Fila</button></td>				
+                <td colspan="12" style="text-align: right;"><button style="border: none;" onclick="insertarFila3(this)">Añadir Fila</button></td>				
             </tr>
 			
 			<!-- Participación en asociaciones Científicas -->
             <tr class="sub-header">
-				<td colspan="10" style="background-color: #f2f2f2;">Participación en asociaciones científicas</td>
-				<td colspan="4" style="background-color: #f2f2f2;">Indicador de cumplimiento</td>
+				<td colspan="12" style="background-color: #f2f2f2;">Participación en asociaciones científicas</td>
+				
             </tr>
             <tr>
 				<th>N° Acta</th>
@@ -548,21 +470,19 @@
                 <th>Horas semanales</th>
                 <th>Horas semestre</th>
                 <th>Horas año</th>
-                <th style="color:red;">Nombre</th>
-				<th style="color:red;">Método de cálculo</th>
-				<th style="color:red;">Unidad de medida</th>
-                <th style="color:red;">Meta del indicador</th>
+                <th>EVIDENCIA (si lo requiere)</th>
+				<th style="color:red;" class="oculto">Autoevaluación / Porcetanje de avance</th>
             </tr>
             
 			
 			<tr>
-                <td colspan="14" style="text-align: right;"><button style="border: none;" onclick="insertarFila3(this)">Añadir Fila</button></td>				
+                <td colspan="12" style="text-align: right;"><button style="border: none;" onclick="insertarFila3(this)">Añadir Fila</button></td>				
             </tr>
 			
 			<!-- Reconocimiento como investigador junior, asociado, senior o emerito por el ministerio de ciencia y tecnología.  -->
             <tr class="sub-header">
-				<td colspan="10" style="background-color: #f2f2f2;">Reconocimiento como investigador junior, asociado, senior o emerito por el ministerio de ciencia y tecnología</td>
-				<td colspan="4" style="background-color: #f2f2f2;">Indicador de cumplimiento</td>
+				<td colspan="12" style="background-color: #f2f2f2;">Reconocimiento como investigador junior, asociado, senior o emerito por el ministerio de ciencia y tecnología</td>
+				
 				
             </tr>
             <tr>
@@ -574,21 +494,19 @@
                 <th>Horas semanales</th>
                 <th>Horas semestre</th>
                 <th>Horas año</th>
-                <th style="color:red;">Nombre</th>
-				<th style="color:red;">Método de cálculo</th>
-				<th style="color:red;">Unidad de medida</th>
-                <th style="color:red;">Meta del indicador</th>
+                <th>EVIDENCIA (si lo requiere)</th>
+				<th style="color:red;" class="oculto">Autoevaluación / Porcetanje de avance</th>
             </tr>
             
 			
 			<tr>
-                <td colspan="14" style="text-align: right;"><button style="border: none;" onclick="insertarFila3(this)">Añadir Fila</button></td>				
+                <td colspan="12" style="text-align: right;"><button style="border: none;" onclick="insertarFila3(this)">Añadir Fila</button></td>				
             </tr>
 			
 			<!-- Creeación y participación en semilleros de investigación reconocidos por la VIE. -->
             <tr class="sub-header">
-				<td colspan="10" style="background-color: #f2f2f2;">Creeación y participación en semilleros de investigación reconocidos por la VIE</td>
-				<td colspan="4" style="background-color: #f2f2f2;">Indicador de cumplimiento</td>
+				<td colspan="12" style="background-color: #f2f2f2;">Creeación y participación en semilleros de investigación reconocidos por la VIE</td>
+				
             </tr>
             <tr>
 				<th>N° Acta</th>
@@ -600,22 +518,20 @@
                 <th>Horas semanales</th>
                 <th>Horas semestre</th>
                 <th>Horas año</th>
-                <th style="color:red;">Nombre</th>
-				<th style="color:red;">Método de cálculo</th>
-				<th style="color:red;">Unidad de medida</th>
-                <th style="color:red;">Meta del indicador</th>
+                <th>EVIDENCIA (si lo requiere)</th>
+				<th style="color:red;" class="oculto">Autoevaluación / Porcetanje de avance</th>
             </tr>
                      
 			
 			
 			<tr>
-                <td colspan="14" style="text-align: right;"><button style="border: none;" onclick="insertarFila2(this)">Añadir Fila</button></td>						
+                <td colspan="12" style="text-align: right;"><button style="border: none;" onclick="insertarFila2(this)">Añadir Fila</button></td>						
             </tr>
 			
 			<!-- Gestión de proyectos de investigación en convocatorias internacionales (incluyendo formulación, organización, sometimiento y ejecución de las propuestas).  -->
             <tr class="sub-header">
-				<td colspan="10" style="background-color: #f2f2f2;">Gestión de proyectos de investigación en convocatorias internacionales  </td>
-				<td colspan="4" style="background-color: #f2f2f2;">Indicador de cumplimiento</td>
+				<td colspan="12" style="background-color: #f2f2f2;">Gestión de proyectos de investigación en convocatorias internacionales  </td>
+				
 				
             </tr>
             <tr>
@@ -628,21 +544,19 @@
                 <th>Horas semanales</th>
                 <th>Horas semestre</th>
                 <th>Horas año</th>
-                <th style="color:red;">Nombre</th>
-				<th style="color:red;">Método de cálculo</th>
-				<th style="color:red;">Unidad de medida</th>
-                <th style="color:red;">Meta del indicador</th>
+                <th>EVIDENCIA (si lo requiere)</th>
+				<th style="color:red;" class="oculto">Autoevaluación / Porcetanje de avance</th>
             </tr>
             
 			
 			<tr>
-                <td colspan="14" style="text-align: right;"><button style="border: none;" onclick="insertarFila2(this)">Añadir Fila</button></td>			
+                <td colspan="12" style="text-align: right;"><button style="border: none;" onclick="insertarFila2(this)">Añadir Fila</button></td>			
             </tr>
 			
 			<!-- Obtención de patentes 	-->
             <tr class="sub-header">
-				<td colspan="10" style="background-color: #f2f2f2;">Obtención de patentes  </td>
-				<td colspan="4" style="background-color: #f2f2f2;">Indicador de cumplimiento</td>
+				<td colspan="12" style="background-color: #f2f2f2;">Obtención de patentes  </td>
+				
             </tr>
             <tr>
 				<th>N° Acta</th>
@@ -654,21 +568,19 @@
                 <th>Horas semanales</th>
                 <th>Horas semestre</th>
                 <th>Horas año</th>
-                <th style="color:red;">Nombre</th>
-				<th style="color:red;">Método de cálculo</th>
-				<th style="color:red;">Unidad de medida</th>
-                <th style="color:red;">Meta del indicador</th>
+                <th>EVIDENCIA (si lo requiere)</th>
+				<th style="color:red;" class="oculto">Autoevaluación / Porcetanje de avance</th>
             </tr>
             
 			
 			<tr>
-                <td colspan="14" style="text-align: right;"><button style="border: none;" onclick="insertarFila2(this)">Añadir Fila</button></td>		
+                <td colspan="12" style="text-align: right;"><button style="border: none;" onclick="insertarFila2(this)">Añadir Fila</button></td>		
             </tr>
 			
 			<!--  Generación y mantenimiento de Spin-OFF.  	-->
             <tr class="sub-header">
-				<td colspan="10" style="background-color: #f2f2f2;">Generación y mantenimiento de Spin-OFF  </td>
-				<td colspan="4" style="background-color: #f2f2f2;">Indicador de cumplimiento</td>
+				<td colspan="12" style="background-color: #f2f2f2;">Generación y mantenimiento de Spin-OFF  </td>
+				
             </tr>
             <tr>
 				<th>N° Acta</th>
@@ -680,72 +592,75 @@
                 <th>Horas semanales</th>
                 <th>Horas semestre</th>
                 <th>Horas año</th>
-                <th style="color:red;">Nombre</th>
-				<th style="color:red;">Método de cálculo</th>
-				<th style="color:red;">Unidad de medida</th>
-                <th style="color:red;">Meta del indicador</th>
+                <th>EVIDENCIA (si lo requiere)</th>
+				<th style="color:red;" class="oculto">Autoevaluación / Porcetanje de avance</th>
             </tr>
             
 			
 			<tr>
-                <td colspan="14" style="text-align: right;"><button style="border: none;" onclick="insertarFila2(this)">Añadir Fila</button></td>		
+                <td colspan="12" style="text-align: right;"><button style="border: none;" onclick="insertarFila2(this)">Añadir Fila</button></td>		
             </tr>
 			
         </tbody>
 </table>			
  
-<table border="1" cellspacing="0" cellpadding="4"> 
 
-        <!-- Sección Extensión -->
-		<thead>
-    <tr>
-        <th rowspan="2">TIPO DE ACTIVIDAD</th>
-        <th rowspan="2">No ACT.</th>
-        <th colspan="8" rowspan="2">DESCRIPCIÓN DE LA ACTIVIDAD</th>
-        <th rowspan="2">HORAS PLANEADAS</th>
-        <th colspan="3">INDICADOR DE CUMPLIMIENTO</th>
-        <th style="color:red;" rowspan="2">META DEL INDICADOR</th>
-    </tr>
-    <tr>
-        <th style="color:red;">Nombre</th>
-        <th style="color:red;">Método de cálculo</th>
-        <th style="color:red;">Unidad de medida</th>
-    </tr>
-</thead>
-<tbody>
-    <tr>
-        <td rowspan="1000">Extensión</td>
-        <td colspan="14" style="background-color: #f2f2f2;">Coordinación de programas autofinanciados</td>
+        </div>
+    </div>
+
+    <!-- Sección Extensión -->
+<div class="seccion">
+    <div class="header-container">
+        <h2 style="text-align: left;">Extensión</h2>
+        <button class="circle-button" onclick="toggleSeccion('extension')">+</button>
+    </div>
+    <div id="extension" class="oculto">
+        <h3>Detalles de Actividades de Extensión</h3>
+        <table border="1" cellspacing="0" cellpadding="4">
+            <thead>
+                <tr>
+                    <th rowspan="2">TIPO DE ACTIVIDAD</th>
+                    <th rowspan="2">No ACT.</th>
+                    <th colspan="8" rowspan="2">DESCRIPCIÓN DE LA ACTIVIDAD</th>
+                    <th rowspan="2">HORAS PLANEADAS</th>
+                    <th >EVIDENCIA (si lo requiere)</th>
+                    <th style="color:red;" rowspan="2" class="oculto">Autoevaluación / Porcentaje de avance</th>
+                </tr>
+                
+            </thead>
+            <tbody>
+                <!-- Actividades -->
+                <tr>
+        <td rowspan="10000">Extensión</td>
+        <td colspan="12" style="background-color: #f2f2f2;">Coordinación de programas autofinanciados</td>
     </tr>
     <tr>
         <td>Ext1.</td>
         <td colspan="8"contenteditable="true"></td>
         <td contenteditable="true"></td>
         <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
+        <td contenteditable="true" class="oculto"></td>
+        
     </tr>
 	<tr>
-                <td colspan="14" style="text-align: right;"><button style="border: none;" onclick="insertarFila4(this)">Añadir Fila</button></td>				
+                <td colspan="12" style="text-align: right;"><button style="border: none;" onclick="insertarFila4(this)">Añadir Fila</button></td>				
             </tr>
     <tr>
-        <td colspan="14" style="background-color: #f2f2f2;">Desarrollo de Proyecto de extensión solidaria</td>
+        <td colspan="12" style="background-color: #f2f2f2;">Desarrollo de Proyecto de extensión solidaria</td>
     </tr>
     <tr>
         <td contenteditable="true"></td>
         <td colspan="8"contenteditable="true"></td>
         <td contenteditable="true"></td>
         <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
+        <td contenteditable="true" class="oculto"></td>
+        
     </tr>
 	<tr>
-                <td colspan="14" style="text-align: right;"><button style="border: none;" onclick="insertarFila4(this)">Añadir Fila</button></td>				
+                <td colspan="12" style="text-align: right;"><button style="border: none;" onclick="insertarFila4(this)">Añadir Fila</button></td>				
             </tr>
     <tr>
-        <td colspan="14" style="background-color: #f2f2f2;">Desarrollo de Proyecto de extensión no solidaria</td>
+        <td colspan="12" style="background-color: #f2f2f2;">Desarrollo de Proyecto de extensión no solidaria</td>
     </tr>
     <tr>
 		
@@ -753,206 +668,195 @@
         <td colspan="8" contenteditable="true"></td>
         <td contenteditable="true"></td>
         <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
+        <td contenteditable="true" class="oculto"></td>
+        
     </tr>
 	<tr>
-                <td colspan="14" style="text-align: right;"><button style="border: none;" onclick="insertarFila4(this)">Añadir Fila</button></td>				
+                <td colspan="12" style="text-align: right;"><button style="border: none;" onclick="insertarFila4(this)">Añadir Fila</button></td>				
             </tr>
     <tr>
-        <td colspan="14" style="background-color: #f2f2f2;">Coordinación de programas autofinanciados</td>
+        <td colspan="12" style="background-color: #f2f2f2;">Coordinación de programas autofinanciados</td>
     </tr>
     <tr>
         <td contenteditable="true"></td>
         <td colspan="8" contenteditable="true"></td>
         <td contenteditable="true"></td>
         <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
+        <td contenteditable="true" class="oculto"></td>
+        
     </tr>
 	<tr>
-                <td colspan="14" style="text-align: right;"><button style="border: none;" onclick="insertarFila4(this)">Añadir Fila</button></td>				
+                <td colspan="12" style="text-align: right;"><button style="border: none;" onclick="insertarFila4(this)">Añadir Fila</button></td>				
             </tr>
     <tr>
-        <td colspan="14" style="background-color: #f2f2f2;">Coordinación de laboratorios</td>
+        <td colspan="12" style="background-color: #f2f2f2;">Coordinación de laboratorios</td>
     </tr>
     <tr>
         <td contenteditable="true"></td>
         <td colspan="8" contenteditable="true"></td>
         <td contenteditable="true"></td>
         <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
+        <td contenteditable="true" class="oculto"></td>
+        
     </tr>
 	<tr>
-                <td colspan="14" style="text-align: right;"><button style="border: none;" onclick="insertarFila4(this)">Añadir Fila</button></td>				
+                <td colspan="12" style="text-align: right;"><button style="border: none;" onclick="insertarFila4(this)">Añadir Fila</button></td>				
             </tr>
     <tr>
-        <td colspan="14" style="background-color: #f2f2f2;">Consultoría especializada</td>
+        <td colspan="12" style="background-color: #f2f2f2;">Consultoría especializada</td>
     </tr>
     <tr>
         <td contenteditable="true"></td>
         <td colspan="8" contenteditable="true"></td>
         <td contenteditable="true"></td>
         <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
+        <td contenteditable="true" class="oculto"></td>
+        
     </tr>
 	<tr>
-                <td colspan="14" style="text-align: right;"><button style="border: none;" onclick="insertarFila4(this)">Añadir Fila</button></td>				
+                <td colspan="12" style="text-align: right;"><button style="border: none;" onclick="insertarFila4(this)">Añadir Fila</button></td>				
             </tr>
     <tr>
-        <td colspan="14" style="background-color: #f2f2f2;">Otros</td>
+        <td colspan="12" style="background-color: #f2f2f2;">Otros</td>
     </tr>
     <tr>
         <td contenteditable="true"></td>
         <td colspan="8"contenteditable="true"></td>
         <td contenteditable="true"></td>
         <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
+        <td contenteditable="true" class="oculto"></td>
+        
     </tr>
 	<tr>
-                <td colspan="14" style="text-align: right;"><button style="border: none;" onclick="insertarFila4(this)">Añadir Fila</button></td>				
+                <td colspan="12" style="text-align: right;"><button style="border: none;" onclick="insertarFila4(this)">Añadir Fila</button></td>				
             </tr>
 		
 </table>
-
-<table border="1" cellspacing="0" cellpadding="4">		
-		<!-- Actividades Académico Administrativas -->
-		<thead>
-		
-        <tr>
-            <th rowspan="2">TIPO DE ACTIVIDAD</th>
-            <th rowspan="2">No ACT.</th>
-            <th rowspan="2" colspan="8" >DESCRIPCIÓN DE LA ACTIVIDAD</th>
-            <th rowspan="2">HORAS PLANEADAS</th>
-            <th colspan="3">INDICADOR DE CUMPLIMIENTO</th>
-            <th style="color:red;" rowspan="2">META DEL INDICADOR</th>
-        </tr>
-        <tr>
-            <th style="color:red;">Nombre</th>
-            <th style="color:red;">Método de cálculo</th>
-            <th style="color:red;">Unidad de medida</th>
-        </tr>
-    </thead>
-		
-        <tr>
-            <td rowspan="1000">Funciones<br>Académico<br>Administrativas</td>
-			
-            <td>Ext1.</td>
-            <td contenteditable="true" colspan="8" >Dirección de Unidad Académico Administrativa</td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-        </tr>
-        
-            <td>Ext2.</td>
-            <td contenteditable="true" colspan="8" >Comité curricular pregrado</td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-        </tr>
-		
-            <td>Ext3.</td>
-            <td contenteditable="true" colspan="8" >Comité curricular posgrados</td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-        </tr>
-		
-            <td>Ext4.</td>
-            <td contenteditable="true" colspan="8" >Coordinación de programas autofinanciados</td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-        </tr>
-		
-            <td>Ext5.</td>
-            <td contenteditable="true" colspan="8">Reforma académica de programa </td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-        </tr>
-		
-            <td>Ext6.</td>
-            <td contenteditable="true" colspan="8" >Líder Proyecto Plan de mejoramiento del programa</td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-        </tr>
-		
-            <td>Ext7.</td>
-            <td contenteditable="true" colspan="8" >Acreditación ABET</td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-        </tr>
-		
-            <td>Ext8.</td>
-            <td contenteditable="true" colspan="8" >Nodo Proceso de autoevaluación del programa</td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-        </tr>
-		
-            <td>Ext9.</td>
-            <td contenteditable="true" colspan="8" >Representante profesoral (Consejo de Escuela, Consejo de Facultad, CA, CS ...)</td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-			
-        </tr>
-		
-		<tr>
-        <td style="background-color: #f2f2f2;" colspan="14" >Otros</td>
-    </tr>
-        
-    <tr>
-        <td contenteditable="true"></td>
-        <td contenteditable="true" colspan="8" ></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-		<td contenteditable="true"></td>
-    </tr>
-	<tr>
-                <td colspan="14" style="text-align: right;"><button style="border: none;" onclick="insertarFila4(this)">Añadir Fila</button></td>				
-            </tr>
-    </tbody>
-</table>
-
-<button onclick="printPage()">Imprimir Página</button>
-<button onclick="printPage()">autoevaluación</button>
-
-    
+    </div>
 </div>
 
-<!-- Modal oculto que contiene la tabla -->
+	
+	<!-- Sección Actividades Académico Administrativas -->
+<!-- Sección Actividades Académico Administrativas -->
+<div class="seccion">
+    <div class="header-container">
+        <h2 style="text-align: left;">Actividades Académico Administrativas</h2>
+        <button class="circle-button" onclick="toggleSeccion('actividades-admin')">+</button>
+    </div>
+    <div id="actividades-admin" class="oculto">
+        <h3>Agregar Actividad Académico Administrativa</h3>
+        
+
+        <!-- Tabla para Actividades Académico Administrativas -->
+        <table border="1" style="width: 100%; border-collapse: collapse;">
+            <thead>
+                <tr>
+                    <th rowspan="2">TIPO DE ACTIVIDAD</th>
+                    <th rowspan="2">No ACT.</th>
+                    <th rowspan="2" colspan="8">DESCRIPCIÓN DE LA ACTIVIDAD</th>
+                    <th rowspan="2">HORAS PLANEADAS</th>
+                    <th >EVIDENCIA (si lo requiere)</th>
+                    <th style="color:red;" rowspan="2">Autoevaluación / Porcentaje de avance</th>
+                </tr>
+                
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="10000">Funciones<br>Académico<br>Administrativas</td>
+                    <td>Ext1.</td>
+                    <td contenteditable="true" colspan="8">Dirección de Unidad Académico Administrativa</td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                </tr>
+                <tr>
+                    <td>Ext2.</td>
+                    <td contenteditable="true" colspan="8">Comité curricular pregrado</td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    
+                </tr>
+                <tr>
+                    <td>Ext3.</td>
+                    <td contenteditable="true" colspan="8">Comité curricular posgrados</td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    
+                </tr>
+                <tr>
+                    <td>Ext4.</td>
+                    <td contenteditable="true" colspan="8">Coordinación de programas autofinanciados</td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    
+                </tr>
+                <tr>
+                    <td>Ext5.</td>
+                    <td contenteditable="true" colspan="8">Reforma académica de programa</td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    
+                </tr>
+                <tr>
+                    <td>Ext6.</td>
+                    <td contenteditable="true" colspan="8">Líder Proyecto Plan de mejoramiento del programa</td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    
+                </tr>
+                <tr>
+                    <td>Ext7.</td>
+                    <td contenteditable="true" colspan="8">Acreditación ABET</td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    
+                </tr>
+                <tr>
+                    <td>Ext8.</td>
+                    <td contenteditable="true" colspan="8">Nodo Proceso de autoevaluación del programa</td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    
+                </tr>
+                <tr>
+                    <td>Ext9.</td>
+                    <td contenteditable="true" colspan="8">Representante profesoral (Consejo de Escuela, Consejo de Facultad, CA, CS ...)</td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    
+                </tr>
+                <tr>
+                    <td style="background-color: #f2f2f2;" colspan="12">Otros</td>
+                </tr>
+                <tr>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true" colspan="8"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    
+                </tr>
+                <tr>
+                    <td colspan="12" style="text-align: right;">
+                        <button style="border: none;" onclick="insertarFila4(this)">Añadir Fila</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+	
+	<!-- Modal oculto que contiene la tabla -->
 <div id="myModal" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal()">&times;</span>
@@ -990,8 +894,23 @@
   </div>
 </div>
 
-    <script>
-        document.getElementById('planForm').addEventListener('submit', function(e) {
+</div>
+<button onclick="printPage()">autoevaluación</button>
+
+    
+	
+	
+	<script>
+        function toggleSeccion(id) {
+            const elemento = document.getElementById(id);
+            if (elemento.style.display === 'none' || elemento.style.display === '') {
+                elemento.style.display = 'block';
+            } else {
+                elemento.style.display = 'none';
+            }
+        }
+		
+		document.getElementById('planForm').addEventListener('submit', function(e) {
             e.preventDefault(); // Previene que el formulario se envíe automáticamente
 
             const profesor = document.getElementById('profesor').value;
@@ -1195,9 +1114,8 @@ function insertarFila(button) {
     <td id="${resultCellId}"></td>
     <td contenteditable="true"></td>
     <td contenteditable="true"></td>
-    <td contenteditable="true"></td>
-    <td contenteditable="true"></td>
-    <td contenteditable="true"></td>
+	<td contenteditable="true" class="oculto"></td>
+    
     `;
 
     // Navegar correctamente al tbody que contiene la fila actual
@@ -1244,9 +1162,8 @@ function insertarFila2(button) {
 		<td id="${resultCellId}"></td>
         <td contenteditable="true"></td>
         <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
+        <td contenteditable="true" class="oculto"></td>
+        
     `;
 
      // Navegar correctamente al tbody que contiene la fila actual
@@ -1280,9 +1197,9 @@ function insertarFila3(button) {
 				<td id="${resultCellId}"></td>
                 <td contenteditable="true"></td>
                 <td contenteditable="true"></td>
-                <td contenteditable="true"></td>
-                <td contenteditable="true"></td>
-                <td contenteditable="true"></td>
+                <td contenteditable="true" class="oculto"></td>
+                
+                
             
     `;
 
@@ -1311,23 +1228,29 @@ function insertarFila4(button) {
     // Crear una nueva fila
     let nuevaFila = document.createElement('tr');
 
-    // Crear la primera celda, que es editable
+    // Crear la primera celda (editable)
     let celda1 = document.createElement('td');
     celda1.setAttribute('contenteditable', 'true');
     nuevaFila.appendChild(celda1);
 
-    // Crear la segunda celda con colspan="8", también editable
+    // Crear la segunda celda con colspan="8" (editable)
     let celda2 = document.createElement('td');
     celda2.setAttribute('contenteditable', 'true');
     celda2.setAttribute('colspan', '8'); // Colspan de 8 columnas
     nuevaFila.appendChild(celda2);
 
-    // Crear las siguientes celdas (5 más) que son editables
-    for (let i = 0; i < 5; i++) {
-        let nuevaCelda = document.createElement('td');
-        nuevaCelda.setAttribute('contenteditable', 'true');
-        nuevaFila.appendChild(nuevaCelda);
+    // Crear las siguientes 3 celdas (todas editables)
+for (let i = 0; i < 3; i++) {
+    let nuevaCelda = document.createElement('td');
+    nuevaCelda.setAttribute('contenteditable', 'true');
+    
+    // Verificar si es la última celda (i == 2)
+    if (i === 2) {
+        nuevaCelda.style.display = 'none';  // Ocultar la última celda
     }
+
+    nuevaFila.appendChild(nuevaCelda);
+}
 
     // Obtener la fila actual (donde está el botón)
     let filaActual = button.parentNode.parentNode;
@@ -1335,6 +1258,7 @@ function insertarFila4(button) {
     // Insertar la nueva fila antes de la fila actual (donde está el botón)
     filaActual.parentNode.insertBefore(nuevaFila, filaActual);
 }
+
 
 
 	
@@ -1387,9 +1311,7 @@ function insertarFila6(button) {
         <td id="${resultCellId}"></td>
         <td onclick="openModal(this)">Click para editar el horario</td>
         <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
-        <td contenteditable="true"></td>
+        <td contenteditable="true" class="oculto"></td>
     `;
 
     // Navegar correctamente al tbody que contiene la fila actual
@@ -1447,5 +1369,5 @@ function saveHorario() {
 	
 	
     </script>
-</body>
-</html>
+    </body>
+	</html>
